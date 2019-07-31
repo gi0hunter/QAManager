@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+		<section class="layout-content" layout:fragment="corpo">
+
+			<nav class="navbar navbar-expand-md bg-light">
+				<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active"><i class="oi oi-caret-right"></i>
+							<span>Cadastrar BUG</span></li>
+					</ul>
+				</div>
+				<a class="btn btn-primary btn-md" href="/bugs/listar" role="button">
+					<span class="oi oi-spreadsheet" title="Cadastro" aria-hidden="true"></span>
+					<span>Listar Bugs</span>
+				</a>
+			</nav>
+
+			<div class="container" id="cadastro">
+				<form action="/casos/salvar" method="POST">
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="projeto">Projeto</label> <select id="projeto"
+								class="form-control" name="projeto">
+								<option value="">Selecione</option>
+								<option value="3">Administração</option>
+								<option value="2">Contabilidade</option>
+								<option value="1">Recursos Humanos</option>
+								<option value="4">Tecnologia da Informação</option>
+							</select>
+						</div>
+						<div class="form-group col-md-4">
+							<label for="planos">Planos</label> <select id="planos"
+								class="form-control" name="planos">
+								<option value="">Selecione</option>
+								<option value="1">Cadastro de Administração</option>
+								<option value="2">Alteração de Administração</option>
+								<option value="3">Cadastro de Recursos Humanos</option>
+
+							</select>
+						</div>
+
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-4">
+							<label for="casos">Casos</label> <select id="casos"
+								class="form-control" name="casos">
+								<option value="">Selecione</option>
+								<option value="1">Acessar Cadastro de Administração</option>
+								<option value="2">Não informar dados obrigatorios</option>
+								<option value="3">Informar dados obrigatorios</option>
+
+							</select>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="nome">Bug</label> <input type="text"
+								class="form-control" id="bug" placeholder="Descrição do bug"
+								autofocus="autofocus" name="bug" value="" />
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="custom-file" id="customFile">
+							<input type="file" class="custom-file-input"
+								id="exampleInputFile" aria-describedby="fileHelp"> <label
+								class="custom-file-label" for="exampleInputFile"> Selecione Evidência </label>
+								<br/>
+						</div>
+						<br/>
+
+					</div>
+					<br/>
+					<input type="hidden" id="id" name="id" value="" />
+					<button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+				</form>
+			</div>
+		</section>
+
+
+	<footer class="layout-footer">
+		<div class="container">
+			<span class="footer-copy">&copy; Degenerations * Todos os
+				direitos reservados.</span>
+		</div>
+	</footer>
+
+</body>
+</html>

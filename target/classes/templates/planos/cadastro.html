@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>	
+	    <section class="layout-content" layout:fragment="corpo">
+	
+	        <nav class="navbar navbar-expand-md bg-light">
+	            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	                <ul class="navbar-nav mr-auto">
+	                    <li class="nav-item active">
+	                        <i class="oi oi-caret-right"></i>
+	                        <span>Cadastrar Plano de Teste</span>
+	                    </li>
+	                </ul>
+	                <a class="btn btn-primary btn-md" href="/planos/listar" role="button">
+	                    <span class="oi oi-spreadsheet" title="Listar" aria-hidden="true"></span>
+	                    <span>Listar Planos</span>
+	                </a>
+	            </div>
+	        </nav>
+	
+	        <div class="container" id="cadastro">
+	            <form action="/planos/salvar" method="POST">
+	              
+	                <div class="form-row">
+	                      <div class="form-group col-md-6">
+	                        <label for="projeto">Projeto</label>
+	                        <select id="projeto" class="form-control" name="projeto">
+	                            <option value="">Selecione</option>
+	                            <option value="3">Administração</option>
+	                            <option value="2">Contabilidade</option>
+	                            <option value="1">Recursos Humanos</option>
+	                            <option value="4">Tecnologia da Informação</option>
+	                        </select>
+	                    </div>
+	                </div>
+	                <div class="form-row">
+	                    <div class="form-group col-md-6">
+	                        <label for="nome">Plano</label>
+	                        <input type="text" class="form-control" id="plano"
+	                               placeholder="Nome do Plano" autofocus="autofocus" name="plano" value=""/>
+	                    </div>
+	                </div>
+	                </div>
+	                
+	                <input type="hidden" id="id" name="id" value=""/>
+	                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+	            </form>
+	    </section>
+	
+	</div>
+	
+    <footer class="layout-footer">
+        <div class="container">
+            <span class="footer-copy">&copy; Degenerations * Todos os direitos reservados.</span>
+        </div>
+    </footer>	
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+	<section class="layout-content" layout:fragment="corpo">
+
+		<nav class="navbar navbar-expand-md bg-light">
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><i class="oi oi-caret-right"></i>
+						<span>Cadastrar Projeto</span></li>
+				</ul>
+				<a class="btn btn-primary btn-md" href="/projetos/listar"
+					role="button"> <span class="oi oi-spreadsheet" title="Listar"
+					aria-hidden="true"></span> <span>Listar Projetos</span>
+				</a>
+			</div>
+		</nav>
+
+		<div class="container" id="cadastro">
+
+			<div th:replace="fragments/alert"></div>
+
+			<form
+				th:action="${projeto.id == null} ? @{/projetos/salvar} : @{/projetos/editar}"
+				th:object="${projeto}" method="POST">
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="nome">Projeto</label> <input type="text"
+							class="form-control" id="projeto" placeholder="Nome do projeto"
+							autofocus="autofocus" th:field="*{nome}" />
+					</div>
+
+					<div class="form-group col-md-4">
+						<label for="status">Status</label> <select id="status"
+							class="form-control" th:field="*{status}">
+							<option value="">Selecione...</option>
+							<option th:each="status : ${statuss}" th:value="${status}"
+								th:text="${status.descricao}"></option>
+						</select>
+						<div class="invalid-feedback"></div>
+					</div>
+
+				</div>
+				<input type="hidden" id="id" th:field="*{id}" />
+				<button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+			</form>
+		</div>
+
+
+		</form>
+		</div>
+	</section>
+
+	</div>
+
+
+</body>
+</html>
